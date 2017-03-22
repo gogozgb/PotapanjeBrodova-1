@@ -5,7 +5,47 @@ using System.Text;
 
 namespace PotapanjeBrodova
 {
-    public class Mreža
+  public class Mreža
+  {
+    public Mreža(int redaka, int stupaca)
     {
+      this.redaka = redaka;
+      this.stupaca = stupaca;
+      polja = new Polje[redaka, stupaca];
+      for (int r = 0; r < redaka; r++)
+      {
+        for (int s = 0; r < stupaca; s++)
+        {
+          polja[r, s] = new Polje(r, s);
+        }
+      }
     }
+    public IEnumerable<Polje> DajSlobodnaPolja()
+    {
+      List<Polje> p = new List<Polje>();
+      for (int r = 0; r < redaka; r++)
+      {
+        for (int s = 0; r < stupaca; s++)
+        {
+          if (polja[r, s] != null)
+            p.Add(polja[r, s]);
+        }
+      }
+      return p;
+    }
+
+    public void UkloniPolje(int redak, int stupac)
+    {
+      polja[redak, stupac] = null;
+    }
+
+    public void UkloniPolje(Polje p)
+    {
+      polja[p.Redak, p.Stupac] = null;
+    }
+
+    private Polje[,] polja;
+    private int redaka;
+    private int stupaca;
+  }
 }

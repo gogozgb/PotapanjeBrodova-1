@@ -5,20 +5,20 @@ using System.Text;
 
 namespace PotapanjeBrodova
 {
-  public class Polje : IEquatable<Polje>
-  {
-    public Polje(int redak, int stupac)
+    public class Polje : IEquatable<Polje>
     {
-      Redak = redak;
-      Stupac = stupac;
-    }
+        public Polje(int redak, int stupac)
+        {
+            Redak = redak;
+            Stupac = stupac;
+        }
 
-    public readonly int Redak;
-    public readonly int Stupac;
+        public readonly int Redak;
+        public readonly int Stupac;
 
-    public bool Equals(Polje other)
-    {
-      return Redak == other.Redak && Stupac == other.Stupac;
+        public bool Equals(Polje other)
+        {
+            return Redak == other.Redak && Stupac == other.Stupac;
+        }
     }
-  }
 }

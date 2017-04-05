@@ -60,7 +60,7 @@ namespace PotapanjeBrodova
       }
     }
 
-    private IEnumerable<IEnumerable<Polje>> DajNizSlobodnihPolja(int duljinaNiza, IEnumerable<int> vanjskiIndeks, IEnumerable<int> UnutarnjiIndex)
+    private List<IEnumerable<Polje>> DajNizSlobodnihPolja(int duljinaNiza, IEnumerable<int> vanjskiIndeks, IEnumerable<int> UnutarnjiIndex, Func<int,int,Polje> DohvatPolja)
     {
       List<IEnumerable<Polje>> nizovi = new List<IEnumerable<Polje>>();
       foreach (int i in vanjskiIndeks)
@@ -68,7 +68,7 @@ namespace PotapanjeBrodova
         RedFiksneDuljine<Polje> red = new RedFiksneDuljine<Polje>(duljinaNiza);
         foreach (int j in UnutarnjiIndex)
         {
-          Polje polje = polja[i, j];
+          Polje polje = DohvatPolja(i,j);
           if (polje == null)
             red.Clear();
           else
@@ -84,44 +84,13 @@ namespace PotapanjeBrodova
 
     private List<IEnumerable<Polje>> DajNizoveSlobodnihPoljaUHorizontalnomSmjeru(int duljinaNiza)
     {
-      List<IEnumerable<Polje>> nizovi = new List<IEnumerable<Polje>>();
-      for (int r = 0; r < redaka; ++r)
-      {
-        RedFiksneDuljine<Polje> red = new RedFiksneDuljine<Polje>(duljinaNiza);
-        for (int s = 0; s < stupaca; ++s)
-        {
-          if (polja[r, s] == null)
-            red.Clear();
-          else
-          {
-            red.Enqueue(polja[r, s]);
-            if (red.Count == duljinaNiza)
-              nizovi.Add(new List<Polje>(red));
-          }
-        }
-      }
-      return nizovi;
+
+      return DajNizSlobodnihPolja(duljinaNiza,DajNizBrojeva(redaka), DajNizBrojeva(stupaca),(i,j)=>polja[i,j]);
     }
 
     private List<IEnumerable<Polje>> DajNizoveSlobodnihPoljaUVertikalnomSmjeru(int duljinaNiza)
     {
-      List<IEnumerable<Polje>> nizovi = new List<IEnumerable<Polje>>();
-      for (int s = 0; s < stupaca; ++s)
-      {
-        RedFiksneDuljine<Polje> red = new RedFiksneDuljine<Polje>(duljinaNiza);
-        for (int r = 0; r < redaka; ++r)
-        {
-          if (polja[r, s] == null)
-            red.Clear();
-          else
-          {
-            red.Enqueue(polja[r, s]);
-            if (red.Count == duljinaNiza)
-              nizovi.Add(new List<Polje>(red));
-          }
-        }
-      }
-      return nizovi;
+      return DajNizSlobodnihPolja(duljinaNiza, DajNizBrojeva(stupaca),DajNizBrojeva(redaka), (i, j) => polja[j, i]);
     }
 
 

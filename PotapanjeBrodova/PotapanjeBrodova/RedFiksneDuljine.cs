@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PotapanjeBrodova
 {
-  public class RedFiksneDuljine<T> :Queue<T>
+  public class RedFiksneDuljine<T> : Queue<T>
   {
     public RedFiksneDuljine(int maksimalnaDuljina)
     {
@@ -18,6 +18,7 @@ namespace PotapanjeBrodova
       while (Count > maksimalnaDuljina)
         Dequeue();
     }
+
 
     private int maksimalnaDuljina;
   }

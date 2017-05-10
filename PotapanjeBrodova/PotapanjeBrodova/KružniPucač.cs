@@ -30,6 +30,17 @@ namespace PotapanjeBrodova
         {
             throw new NotImplementedException();
         }
+
+    private IEnumerable<Polje> DajKandidate()
+    {
+      List<Polje> kandidati = new List<Polje>();
+      foreach (Smjer smjer in Enum.GetValues(typeof(Smjer)))
+      {
+      var lista  =mreža.DajNizSlobodnihPolja(prvoPogođenoPolje ,smjer);
+      }
+      return kandidati;
+    }
+
     private Mreža mreža;
     private Polje prvoPogođenoPolje;
     private int duljinaBroda;

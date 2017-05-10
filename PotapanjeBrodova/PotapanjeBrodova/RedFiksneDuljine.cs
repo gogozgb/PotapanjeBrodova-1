@@ -5,21 +5,21 @@ using System.Text;
 
 namespace PotapanjeBrodova
 {
-  public class RedFiksneDuljine<T> : Queue<T>
-  {
-    public RedFiksneDuljine(int maksimalnaDuljina)
+    public class RedFiksneDuljine<T> : Queue<T>
     {
-      this.maksimalnaDuljina = maksimalnaDuljina;
+        public RedFiksneDuljine(int maksimalnaDuljina)
+        {
+            this.maksimalnaDuljina = maksimalnaDuljina;
+        }
+
+        public new void Enqueue(T element)
+        {
+            base.Enqueue(element);
+            while (Count > maksimalnaDuljina)
+                Dequeue();
+        }
+
+
+        private int maksimalnaDuljina;
     }
-
-    public new void Enqueue(T element)
-    {
-      base.Enqueue(element);
-      while (Count > maksimalnaDuljina)
-        Dequeue();
-    }
-
-
-    private int maksimalnaDuljina;
-  }
 }

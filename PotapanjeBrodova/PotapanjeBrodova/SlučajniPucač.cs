@@ -5,16 +5,32 @@ using System.Text;
 
 namespace PotapanjeBrodova
 {
-    public class SlučajniPucač : IPucač
+  public class SlučajniPucač : IPucač
+  {
+    public SlučajniPucač(Mreža mreža, int duljinaBroda)
     {
-        public Polje Gađaj()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ObradiGađanje(RezultatGađanja rezultat)
-        {
-            throw new NotImplementedException();
-        }
+      this.mreža = mreža;
+      this.duljinaBroda = duljinaBroda;
     }
+    public Polje Gađaj()
+    {
+      throw new NotImplementedException();
+    }
+
+    public void ObradiGađanje(RezultatGađanja rezultat)
+    {
+      throw new NotImplementedException();
+    }
+
+    private Mreža mreža;
+    private int duljinaBroda;
+
+    public IEnumerable<Polje> PogođenaPolja
+    {
+      get
+      {
+        throw new NotImplementedException();
+      }
+    }
+  }
 }

@@ -5,35 +5,82 @@ using System.Text;
 
 namespace PotapanjeBrodova
 {
-    public class LinijskiPucač : IPucač
+  public class LinijskiPucač : IPucač
+  {
+    public LinijskiPucač(Mreža mreža, IEnumerable<Polje> pogođena, int duljinaBroda)
     {
-        public LinijskiPucač(Mreža mreža, IEnumerable<Polje> pogođena, int duljinaBroda)
-        {
-            this.mreža = mreža;
-            this.pogođenaPolja = pogođena;
-            this.duljinaBroda = duljinaBroda;
-        }
-
-        public Polje Gađaj()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ObradiGađanje(RezultatGađanja rezultat)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Polje> PogođenaPolja
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        private Mreža mreža;
-        private IEnumerable<Polje> pogođenaPolja;
-        private int duljinaBroda;
+      this.mreža = mreža;
+      this.pogođenaPolja = new List<Polje>(pogođena);
+      this.duljinaBroda = duljinaBroda;
     }
+
+    public Polje Gađaj()
+    {
+      var kandidati = DajKandidate();
+      return kandidati[izbornik.Next(kandidati.Count())];
+
+    }
+
+    public void ObradiGađanje(RezultatGađanja rezultat)
+    {
+      mreža.UkloniPolje(gađanoPolje);
+      switch (rezultat)
+      {
+        case RezultatGađanja.Promašaj:
+          return;
+        case RezultatGađanja.Pogodak:
+          pogođenaPolja.Add(gađanoPolje);
+          return;
+        case RezultatGađanja.Potopljen:
+          pogođenaPolja.Add(gađanoPolje);
+          TerminatorPolja terminator = new TerminatorPolja(mreža);
+          terminator.UkloniPolja(pogođenaPolja);
+          return;
+        default:
+          break;
+      }
+    }
+
+    public IEnumerable<Polje> PogođenaPolja
+    {
+      get
+      {
+        return pogođenaPolja;
+      }
+    }
+
+    private List<Polje> DajKandidate()
+    {
+      if (pogođenaPolja.First().Redak == pogođenaPolja.Last().Redak)
+      return   DajHorizontalnaPolja();
+      return DajVertikalnaPolja();
+    }
+
+    List<Polje> DajHorizontalnaPolja()
+    {
+      List<Polje> polja = new List<Polje>();
+      Polje prvo = pogođenaPolja.First();
+      Polje zadnje = pogođenaPolja.Last();
+
+      var lijevaPolja = mreža.DajNizSlobodnihPolja(prvo, Smjer.Lijevo);
+      if (lijevaPolja.Count() > 0)
+        polja.Add(lijevaPolja.First());
+      var desnaPolja = mreža.DajNizSlobodnihPolja(prvo, Smjer.Desno);
+      if (desnaPolja.Count() > 0)
+        polja.Add(desnaPolja.First());
+      return polja;
+    }
+
+    List<Polje> DajVertikalnaPolja()
+    {
+      List<Polje> polja = new List<Polje>();
+      return polja;
+
+    }
+    private Mreža mreža;
+    private List<Polje> pogođenaPolja;
+    private int duljinaBroda;
+    private Random izbornik = new Random();
+    private Polje gađanoPolje;
+  }
 }

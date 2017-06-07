@@ -6,6 +6,7 @@ using System.Text;
 
 namespace PotapanjeBrodova
 {
+<<<<<<< HEAD
   public class SlučajniPucač : IPucač
   {
     public SlučajniPucač(Mreža mreža, int duljinaBroda)
@@ -54,6 +55,27 @@ namespace PotapanjeBrodova
     private List<Polje> DajKandidate()
     {
       return mreža.DajNizoveSlobodnihPolja(duljinaBroda).SelectMany(niz => niz).ToList();
+=======
+    public class SlučajniPucač : Pucač, IPucač
+    {
+        public SlučajniPucač(Mreža mreža, int duljinaBroda) 
+            : base(mreža, duljinaBroda)
+        {
+        }
+
+        public override Polje Gađaj()
+        {
+            var kandidati = DajKandidate();
+            Debug.Assert(kandidati.Count > 0);
+            gađanoPolje = kandidati[izbornik.Next(kandidati.Count)];
+            return gađanoPolje;
+        }
+
+        protected virtual List<Polje> DajKandidate()
+        {
+            return mreža.DajNizoveSlobodnihPolja(duljinaBroda).SelectMany(niz => niz).ToList();
+        }
+>>>>>>> Upstream/master
     }
 
     private Mreža mreža;

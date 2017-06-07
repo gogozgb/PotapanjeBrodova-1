@@ -24,6 +24,7 @@ namespace Test
             int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Promašaj);
             Assert.AreEqual(TaktikaGađanja.Nasumično, t.TaktikaGađanja);
         }
@@ -35,6 +36,7 @@ namespace Test
             int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Potopljen);
             Assert.AreEqual(TaktikaGađanja.Nasumično, t.TaktikaGađanja);
         }
@@ -46,6 +48,7 @@ namespace Test
             int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
             Assert.AreEqual(TaktikaGađanja.Kružno, t.TaktikaGađanja);
         }
@@ -57,7 +60,9 @@ namespace Test
             int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Promašaj);
             Assert.AreEqual(TaktikaGađanja.Kružno, t.TaktikaGađanja);
         }
@@ -69,7 +74,9 @@ namespace Test
             int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
             Assert.AreEqual(TaktikaGađanja.Linijsko, t.TaktikaGađanja);
         }
@@ -81,7 +88,9 @@ namespace Test
             int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Potopljen);
             Assert.AreEqual(TaktikaGađanja.Nasumično, t.TaktikaGađanja);
         }
@@ -93,8 +102,11 @@ namespace Test
             int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
+            t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Promašaj);
             Assert.AreEqual(TaktikaGađanja.Linijsko, t.TaktikaGađanja);
         }
@@ -106,9 +118,11 @@ namespace Test
             int stupaca = 5;
             int[] duljineBrodova = new int[] { 3, 2, 1 };
             Topništvo t = new Topništvo(redaka, stupaca, duljineBrodova);
+            Polje prvo = t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
+            Polje drugo = t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Pogodak);
-            t.ObradiGađanje(RezultatGađanja.Pogodak);
+            Polje treće = t.Gađaj();
             t.ObradiGađanje(RezultatGađanja.Potopljen);
             Assert.AreEqual(TaktikaGađanja.Nasumično, t.TaktikaGađanja);
         }

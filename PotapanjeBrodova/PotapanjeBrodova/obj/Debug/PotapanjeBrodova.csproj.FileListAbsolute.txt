@@ -1,0 +1,4 @@
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\PotapanjeBrodova\bin\Debug\PotapanjeBrodova.dll
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\PotapanjeBrodova\bin\Debug\PotapanjeBrodova.pdb
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\PotapanjeBrodova\obj\Debug\PotapanjeBrodova.dll
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\PotapanjeBrodova\obj\Debug\PotapanjeBrodova.pdb

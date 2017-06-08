@@ -1,0 +1,8 @@
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\KonzolnoPotapanjeBrodova\obj\Debug\KonzolnoPotapanjeBrodova.csprojResolveAssemblyReference.cache
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\KonzolnoPotapanjeBrodova\bin\Debug\KonzolnoPotapanjeBrodova.exe.config
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\KonzolnoPotapanjeBrodova\bin\Debug\KonzolnoPotapanjeBrodova.exe
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\KonzolnoPotapanjeBrodova\bin\Debug\KonzolnoPotapanjeBrodova.pdb
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\KonzolnoPotapanjeBrodova\bin\Debug\PotapanjeBrodova.dll
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\KonzolnoPotapanjeBrodova\bin\Debug\PotapanjeBrodova.pdb
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\KonzolnoPotapanjeBrodova\obj\Debug\KonzolnoPotapanjeBrodova.exe
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\KonzolnoPotapanjeBrodova\obj\Debug\KonzolnoPotapanjeBrodova.pdb

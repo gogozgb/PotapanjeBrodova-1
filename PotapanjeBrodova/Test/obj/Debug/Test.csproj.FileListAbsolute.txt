@@ -1,0 +1,7 @@
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\Test\bin\Debug\Test.dll
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\Test\bin\Debug\Test.pdb
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\Test\bin\Debug\PotapanjeBrodova.dll
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\Test\bin\Debug\PotapanjeBrodova.pdb
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\Test\obj\Debug\Test.dll
+D:\goran-pc\tmp\New folder\PotapanjeBrodova-1\PotapanjeBrodova\Test\obj\Debug\Test.pdb
